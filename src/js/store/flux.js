@@ -1,43 +1,55 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			peoples:[],
+			people:[],
+			planets:[],
+			planet:[]
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			getpeoples: async () => {
+				try {
+					const getdata = await fetch('https://www.swapi.tech/api/people')
+					const resdata = await getdata.json()
+					setStore({peoples: resdata.results});
+				}
+				catch (err){
+					console.log(err)
+				}
+		    },
+			getpeople: async (id) => {
+				console.log(id)
+				try {
+					const getdata = await fetch(`https://www.swapi.tech/api/people/${id}`)
+					const resdata = await getdata.json()
+					setStore({people: resdata.result});
+				}
+				catch (err){
+					console.log(err)
+				}
+		    },
+			getplanets: async ()=>{
+				try {
+					const getdata = await fetch('https://www.swapi.tech/api/planets')
+					const resdata = await getdata.json()
+					setStore({planets: resdata.results});
+				}
+				catch (err){
+					console.log(err)
+				}
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			getplanet: async (id)=>{
+				console.log(id)
+				try {
+					const getdata = await fetch(`https://www.swapi.tech/api/planets/${id}`)
+					const resdata = await getdata.json()
+					setStore({planet: resdata.result});
+				}
+				catch (err){
+					console.log(err)
+				}
 			}
+			// Use establecer acciones para llamar a una función dentro de una función
 		}
 	};
 };

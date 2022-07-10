@@ -1,3 +1,9 @@
-/* 
-    General Styles
-*/
+.box-cards{
+    display: inline-flex;
+    width: auto;
+    height: 500px;
+}
+
+.character{
+    background-color: azure;
+}

@@ -1,12 +1,12 @@
-//import react into the bundle
+//importar react en el paquete
 import React from "react";
 import ReactDOM from "react-dom";
 
-//include your index.scss file into the bundle
+//incluya su archivo index.scss en el paquete
 import "../styles/index.css";
 
-//import your own components
+//importa tus propios componentes
 import Layout from "./layout";
 
-//render your react application
+//renderiza tu aplicación de reacción
 ReactDOM.render(<Layout />, document.querySelector("#app"));
