@@ -13,7 +13,7 @@ export const Planets_details = () => {
     }, [])
 
     const remove_data = () =>{
-        console.log(store.planets)
+        console.log(store.planet)
         store.planet = false
     }
 

@@ -1,15 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
+import { Character_details } from "./views/character_details";
+import { Planets_details } from "./views/planets_details";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
+import ScrollToTop from "./component/scrollToTop";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Character_details } from "./views/character_details";
-import { Planets_details } from "./views/planets_details";
+
 
 
 //create your first component
