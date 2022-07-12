@@ -20,14 +20,13 @@ export const Planets_details = () => {
     if (store.planet) {
         return (
             <div className='container'>
-                <div className='row'>
-                    <div className='col-6'>
-                        <h1>{store.planet.properties.name}</h1>
-                    </div>
+                <div class="jumbotron">
+                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4" />
                     <p>{store.planet._id}</p>
-                    <div className='col-6'>
+                    <p class="lead">
                         <Link to="/" className="btn btn-primary" onClick={remove_data}>Back</Link>
-                    </div>
+                    </p>
                 </div>
             </div>
         )

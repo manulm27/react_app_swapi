@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			peoples: [],
 			people: [],
 			planets: [],
-			planet: []
+			planet: [],
+			favorites: []
 		},
 		actions: {
 			getpeoples: async () => {
@@ -49,6 +50,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (err) {
 					console.log(err)
 				}
+			},
+			addFavorites: (data)=>{
+				const store = getStore()
+				setStore({favorites: [...store.favorites, data]})
+				console.log(store)
 			}
 			// Use establecer acciones para llamar a una función dentro de una función
 		}

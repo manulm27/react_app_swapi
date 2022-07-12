@@ -1,9 +1,72 @@
-.box-cards{
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar .star-wars {
+    max-width: 100px;
+}
+
+.list-fav{
+    cursor: pointer;
+}
+
+.item-fav:hover{
+    color: #d89d2e;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgb(174, 174, 174);
+}
+
+.type{
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px rgb(137, 137, 137);
+}
+
+.home {
+    position: absolute;
+    top: 15%;
+    z-index: 0;
+}
+
+.box-cards {
     display: inline-flex;
     width: auto;
     height: 500px;
 }
 
-.character{
+.character {
     background-color: rgb(183, 183, 183);
+}
+
+.name-character,
+.name-planet {
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px white;
+}
+
+.button {
+    position: absolute;
+    top: 85%;
+}
+
+.btn-details {
+    position: absolute;
+    left: 5%;
+}
+
+.favorites-card-btn {
+    position: absolute;
+    right: 5%;
+}
+
+.btn-like{
+    background-color: transparent !important;
+    border: none;
+}
+
+.like {
+    max-width: 30px;
 }
