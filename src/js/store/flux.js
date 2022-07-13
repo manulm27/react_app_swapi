@@ -1,35 +1,45 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			peoples: [],
-			people: [],
+			characters: [],
+			character: [],
 			planets: [],
 			planet: [],
 			favorites: []
 		},
 		actions: {
-			getpeoples: async () => {
+			addFavorites: (data)=>{
+				const store = getStore()
+				setStore({favorites: [...store.favorites, data]})
+				console.log(store)
+			},
+			removeFavorites: (i) => {
+				const store = getStore()
+				store.favorites.splice(i, 1);
+				setStore({ favorites: [...store.favorites]});
+			},
+			getCharacters: async () => {
 				try {
 					const getdata = await fetch('https://www.swapi.tech/api/people')
 					const resdata = await getdata.json()
-					setStore({ peoples: resdata.results });
+					setStore({ characters: resdata.results });
 				}
 				catch (err) {
 					console.log(err)
 				}
 			},
-			getpeople: async (id) => {
+			getCharacter: async (id) => {
 				console.log(id)
 				try {
 					const getdata = await fetch(`https://www.swapi.tech/api/people/${id}`)
 					const resdata = await getdata.json()
-					setStore({ people: resdata.result });
+					setStore({ character: resdata.result });
 				}
 				catch (err) {
 					console.log(err)
 				}
 			},
-			getplanets: async () => {
+			getPlanets: async () => {
 				try {
 					const getdata = await fetch('https://www.swapi.tech/api/planets')
 					const resdata = await getdata.json()
@@ -39,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(err)
 				}
 			},
-			getplanet: async (id) => {
+			getPlanet: async (id) => {
 
 				console.log(id)
 				try {
@@ -50,11 +60,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (err) {
 					console.log(err)
 				}
-			},
-			addFavorites: (data)=>{
-				const store = getStore()
-				setStore({favorites: [...store.favorites, data]})
-				console.log(store)
 			}
 			// Use establecer acciones para llamar a una función dentro de una función
 		}

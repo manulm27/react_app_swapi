@@ -23,9 +23,9 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
+					<Navbar />
 					<Switch>
 						<Route exact path="/">
-							<Navbar />
 							<Home />
 						</Route>
 						<Route exact path="/character_details/:character_id">
@@ -35,7 +35,7 @@ const Layout = () => {
 							<Planets_details />
 						</Route>
 						<Route>
-							<h1>Not found!</h1>
+							<h1 className="error">Not Found!</h1>
 						</Route>
 					</Switch>
 				</ScrollToTop>

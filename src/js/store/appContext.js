@@ -23,10 +23,8 @@ const injectContext = PassedComponent => {
         );
 
 		useEffect(() => {
-			state.actions.getpeoples()
-			state.actions.getpeople()
-			state.actions.getplanets()
-			state.actions.getplanet()
+			state.actions.getCharacters()
+			state.actions.getPlanets()
 
 			console.log(state)
 			/**
