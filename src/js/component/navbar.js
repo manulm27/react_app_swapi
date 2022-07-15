@@ -22,7 +22,7 @@ export const Navbar = () => {
 				<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
 					{store.favorites.length === 0 ?
 						(
-							<li key={0} className="list-fav p-2">No hay elementos</li>
+							<li key={0} className="list-fav p-2">No favorites</li>
 						)
 						:
 						(
